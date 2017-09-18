@@ -44,24 +44,6 @@ extension Date {
 		}
 	}
 
-	func toString(format: String = "MMM d, yyyy") -> String{
-
-		if self.isSameDay(as: Date()){
-			return "Today"
-		}
-
-		if self.isSameDay(as: Date.yesterday()){
-			return "Yesterday"
-		}
-
-		let components = getComponents(secondDate: self)
-		if components.day ?? 0 > 4 {
-			return self.formatDateToString(format: "EEEE")
-		}
-
-		return self.formatDateToString(format: format)
-	}
-
 	func getComponents(secondDate: Date) -> DateComponents{
 		let calendar = Calendar.current
 		// Replace the hour (time) of both dates with 00:00
