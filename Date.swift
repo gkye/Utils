@@ -43,6 +43,30 @@ extension Date {
 		default: return false
 		}
 	}
+	
+    public func days(since date: Date) -> Double {
+        var diff = self.timeIntervalSinceNow - date.timeIntervalSinceNow
+        diff = fabs(diff / 86_400)
+        return diff
+    }
+
+    public func hours(since date: Date) -> Double {
+        var diff = self.timeIntervalSinceNow - date.timeIntervalSinceNow
+        diff = fabs(diff / 3600)
+        return diff
+    }
+
+    public func minutes(since date: Date) -> Double {
+        var diff = self.timeIntervalSinceNow - date.timeIntervalSinceNow
+        diff = fabs(diff / 60)
+        return diff
+    }
+
+    public func seconds(since date: Date) -> Double {
+        var diff = self.timeIntervalSinceNow - date.timeIntervalSinceNow
+        diff = fabs(diff)
+        return diff
+    }
 
 	func getComponents(secondDate: Date) -> DateComponents{
 		let calendar = Calendar.current
