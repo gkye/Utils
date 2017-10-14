@@ -12,14 +12,14 @@ extension Array where Element : Hashable {
 }
 
 extension Array {
-    public mutating func shuffle() {
-        for i in 0 ..< (count - 1) {
-            let j = Int(arc4random_uniform(UInt32(count - i))) + i
-            if i != j {
-                swap(&self[i], &self[j])
-            }
-        }
+  public mutating func shuffle() {
+    for i in 0 ..< (count - 1) {
+      let j = Int(arc4random_uniform(UInt32(count - i))) + i
+      if i != j {
+        self.swapAt(i, j)
+      }
     }
+  }
     
     public func shuffled() -> Array {
         var shuffledArray = self
