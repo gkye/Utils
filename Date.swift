@@ -81,4 +81,13 @@ extension Date {
 		let stringDate = formatter.string(from: self)
 		return stringDate
 	}
+	
+  
+  /// Get years between current date and given date
+  ///
+  /// - Parameter date: date to be compared
+  /// - Returns: years between date or 0 if nil
+  static func yearsTo(_ date : Date) -> Int{
+    return Calendar.current.dateComponents([.year], from: self, to: date).year ?? 0
+  }
 }
