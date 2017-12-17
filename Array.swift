@@ -1,14 +1,18 @@
+//
+//  Extensions+Array.swift
+//  Utils
+//
+//  Created by George Kye on 2017-12-16.
+//  Copyright © 2017 George Kye. All rights reserved.
+//
+
 import Foundation
 
-//ARRAY
-
 extension Array where Element : Hashable {
-    
-    public func unique() -> Array {
-        var seen: [Element : Bool] = [:]
-        
-        return self.filter { seen.updateValue(true, forKey: $0) == nil }
-    }
+  public func unique() -> Array {
+    var seen: [Element : Bool] = [:]
+    return self.filter { seen.updateValue(true, forKey: $0) == nil }
+  }
 }
 
 extension Array {
@@ -20,11 +24,10 @@ extension Array {
       }
     }
   }
-    
-    public func shuffled() -> Array {
-        var shuffledArray = self
-        shuffledArray.shuffle()
-        
-        return shuffledArray
-    }
+  
+  public func shuffled() -> Array {
+    var shuffledArray = self
+    shuffledArray.shuffle()
+    return shuffledArray
+  }
 }
