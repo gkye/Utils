@@ -30,4 +30,11 @@ extension Array {
     shuffledArray.shuffle()
     return shuffledArray
   }
+  
+  // Split an array into chunks ie. [0, 1, 4, 5,6].chunks(2) => [[0, 1], [4, 5], [6]]
+   public func chunks(_ chunkSize: Int) -> [[Element]] {
+        return stride(from: 0, to: self.count, by: chunkSize).map {
+            Array(self[$0..<Swift.min($0 + chunkSize, self.count)])
+        }
+    }
 }
