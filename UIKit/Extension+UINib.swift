@@ -1,6 +1,5 @@
 import UIKit
 
-// swiftlint:disable extension_access_modifier
 extension UIView {
   public class func fromNib() -> Self {
     return fromNib(nibName: nil)
